@@ -1,0 +1,291 @@
+/*style.css*/
+/* IMPORTAMOS LAS FUENTES DE GOOGLE QUE LLEVE AQUI */
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Open+Sans:400,600);
+
+*{
+    box-sizing: border-box;
+}
+ul,li{margin:0px;padding:0px;list-style:none;} /* REINICIAMOS LOS UL,LI */
+
+/* DEFINIMOS LOS TAMAÑOS DE LOS TITULOS, COLORES DE FUENTES */
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Amatic SC', cursive;
+
+    font-weight:400;
+    color:#000000;
+}
+
+
+a{color:#000;}
+a:hover{text-decoration: none;color:#999;}
+p{font-style:normal;font-size:18px;color:#999;font-weight: 400;text-align: justify;}
+
+
+h1{font-size:74px;}
+h2{font-size:64px;}
+h3{font-size:50px;}
+h4{font-size:42px;}
+h5{font-size:20px;}
+h6{font-size:30px;}
+
+
+.relative{position:relative;} /* POR SI HAY QUE DEFINIR UN RELATIVE */
+.absolute{position: absolute;}
+
+.imagen{
+    /* PARA LAS IMAGENES DE BLOQUES,PRODUCTOS,ETC NO USAMOS IMG SINO <DIV CLASS="IMAGEN></DIV>
+    CON UN BACKGROUND. DE ESTA FORMA SIEMPRE ENCAJARAN DENTRO DEL DIV */
+    background-position:center center; background-repeat:no-repeat;background-size:cover;
+}
+.imagen:after{
+    /* ESTA CLASE NO ES DE LA BASE PERO TE LA HE PUESTO PORQUE CON ELLA SE DEFINE LA PROPORCION 
+    DE LAS IMAGENES. EN ESTE EJEMPLO EN PARTICULAR EL ASPECTO/RATIO ES DE 10/6 */
+    content:"";
+    display:block;
+    padding-top:75%;
+}
+
+.wrapper-flex{
+    /* ESTA CLASE LA USAMOS PARA CENTRAR VERTICALMENTE TODO LO QUE ESTE AL SIGUIENTE NIVEL */
+    
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex; 
+
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+}
+
+body{
+    /* DEFINICION DE LAA FUENTE PRINCIPAL Y EL COLOR Y TAMAÑO ESTANDAR */
+    background-color:#fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size:18px;
+    color:#999;
+}
+
+
+/* VARIOS SEPARADORES PARA INTENTAR USAR LOS MENOS MARGENES POSIBLES */
+.separa-10{height:10px;clear:both;}
+.separa-20{height:20px;clear:both;}
+.separa-30{height:30px;clear:both;}
+.separa-40{height:40px;clear:both;}
+
+.full-width{width:100%;} /* PARA IMAGENES QUE SE AJUSTEN A RESPONSIVE */
+
+.grey{background-color:#FDFDFD;} /* CLASE QUE USAMOS PARA FONDOS GRISES */
+
+.no-padding{
+    padding: 0;
+    margin: 0;
+}
+.simple-navbar{border:0;  background-color: transparent; border-radius:0; padding-bottom: 0; margin-bottom: 0;} /*PARA QUITAR LOS ESTILOS DE LA NAVEGACION DE BOOTSTRAP*/
+.navbar{z-index: 2;}
+.navbar .navbar-brand{margin-top: 1.1em; margin-right: 0; padding-right: 0;}
+.navbar-nav > li > a{min-height: 75px; padding-top: 2em; font-size: 14px;} /*PARA MODIFICAR TAMAÑO DEL MENU DE NAVEGACION Y FUENTE*/
+.navbar-nav li{display: block; position: relative;}/*POSICIONAMIENTO RELATIVO DE LA LISTA PARA POSICIONAR EL ICONO*/
+.activ{background-color: #86E2D5;}/*BACKGROUN DE DEL ACTIVE DE LA LISTA*/
+.active-spam{
+    /*POSICIONANDO EL ICONO DE LOS ELEMENTOS DE LA LISTA*/
+    display: block;
+    position: absolute;
+    bottom: -12px;
+    left: 45%;
+    right: 55%;
+    color: #86E2D5;/*COLOR*/
+}
+.color-activ {color: #FFFFFF;}/*DEBERIA SER EL COLOR DE LETRAS DE LA LISTA PERO LA CLASE NO MODIFICA EL TEXTO ASI QUE LO COLOQUE DIRECTAMENTE EN EL HTML Y CON JQUERY AL HACER CLICK*/
+
+.navbar-nav li .uno{left: 40%;}/*FUE NECESARIO AJUSTAR EL POSICIONAMIENTO DEL PRIMER ICONO DEL MENU PARA QUE CENTRARA*/
+
+/*-----------------*/
+
+/*IMAGEN PRINCIPAL*/
+
+
+/*POSICIONAMIENTO DEL TEXTO EN LA IMAGEN INICIAL*/
+#banner .absolute{top: 25%;}
+#banner .absolute h1{color: #FFF; font-weight: 600;}
+#banner .absolute p{font-size: 23px; color: #FFF;}
+
+/*-----------------*/
+
+.subtitulo{font-size: 22px;}/*TAMAÑO DE LOS SUBTIUTLOS DE LAS SECCIONES*/
+
+/*SECCION BIENVENIDOS*/
+
+#bienvenidos h1{color:#86E2D5; font-weight: 600}/*COLOR DEL TITULO*/
+
+#bienvenidos .no-padding .wrapper-flex{height: 214px}/*ALTURA DE LAS CAJITAS DE GALERIAS*/
+
+#bienvenidos ul li h4, #bienvenidos ul li p{ color:#FFF;}/*COLOR DEL TEXTO DE LAS CAJITAS EN LA SECCION BIENVENIDOS*/
+
+#bienvenidos .relative span{font-size: 24px;}/*TAMAÑO DEL ICONO*/
+
+/*COLORES DE LAS CAJITAS DE GALERIAS Y SUS ICONOS*/
+#bienvenidos .new-born{background-color: #3498db;}
+#bienvenidos .new-born span{color:#3498db;}
+
+#bienvenidos .mascotas{background-color: #2ecc71;}
+#bienvenidos .mascotas span{color:#2ecc71;}
+
+#bienvenidos .maternidad{background-color: #19B5FE;}
+#bienvenidos .maternidad span{color:#19B5FE;}
+
+#bienvenidos .ninos{background-color: #F4D03F;}
+#bienvenidos .ninos{color:#F4D03F;}
+/*-----------------------------------------------*/
+
+/*POSICIONAMIENTO DE LOS ICONOS DE LAS CAJITAS*/
+#bienvenidos .wrapper-flex .fa-caret-left{
+    display: block;
+    left: -8px;
+    top: 46%;
+    z-index: 1;
+    
+}
+#bienvenidos .wrapper-flex .fa-caret-right{
+    display: block;
+    right: -8px;
+    top: 46%;
+    z-index: 1;
+    
+}
+/*-------------------*/
+
+
+/*SECCION DE REPORTAJES*/
+#reportajes{background-image: url(imagenes/maqueta-fondo.png);}/*FONDO DE LA SECCION*/
+#reportajes .titulo{color: #2ecc71;font-weight: 600;} /*ESTILOS DEL TITULO*/
+#reportajes .pink{background-color: #f27f9e; padding-top: 5em; padding-bottom: 6em;}/*COLOR DE FONDO DE LAURA Y MARGA Y ESPACIO AL TOPE Y AL PIE DE LA SECCION*/
+#reportajes .ctn-txt-right{padding-left: 1em; padding-right: .7em;}/*PADDING DEL TEXTO DE LAURA Y MARGA*/
+#reportajes .ctn-txt-right h4{font-weight: 600;}/*ESTILO DE LOS TITULOS DE LOS RENGLONES*/
+#reportajes .ctn-txt-right p{line-height: 1.5em;}/*ESPACIADO EN EL TEXTO DE LOS RENGLONES*/
+#reportajes .txt{color:#FFF;}/*COLOR GENERAL*/
+
+#reportajes .yellow{background-color: #F5D76E; padding-top: 5em; padding-bottom: 6em;}/*COLOR DE FONDO DE BODAS*/
+#reportajes .ctn-img img{width:100%; height:473px;}/*DIMENSIONES DE LAS IMAGENES DE LOS RENGLONES*/
+
+/*----------------------*/
+/*FOOTER*/
+footer{background-color: #64c3c7;}/*COLOR DE FONDO*/
+
+footer .list-inline li a span{
+    /*ESTO ES PARA HACER EL CIRCULO BLANCO*/
+    color: #FFF;
+    border: 3px solid #FFF;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: relative;
+    font-size: 28px;/*TAMAÑO DEL ICONO*/
+}
+footer .list-inline li a span:before{position: absolute; left: 22%; top: .3em;} /*CENTRAR LOS ICONOS EN EL CIRCULO*/
+footer .list-inline li:first-child a span:before{left: 30%;}/*ESTE ES PARA CENTRAR EL ICONO DE FACEBOOK*/
+
+footer .politicas li {padding: 0; margin: 0;}/*PARA QUITAR LOS ESPACIOS DE LA LISTA*/
+footer .politicas li a{color: #FFF;font-size: 16px;}/*COLOR Y TAMAÑO DE DE LETRA DE POLITICAS DE PRIVACICIDAD*/
+
+/*ESTILOS DEL TEXTO DEL COPYRIGHT*/
+footer p{
+    line-height: 1.2em;
+    width: 100%;
+    color: #FFF;
+    font-size: 16px;
+}
+footer p span{
+    font-size: 15px;
+}
+
+/*--------------------*/
+
+@media screen and (max-width: 1200px) {
+    /* IPAD HORIZONTAL */
+    
+    /*BIENVENIDOS*/
+    #bienvenidos .no-padding .wrapper-flex{height: 176px}/*MODIFICACION DE ALTURA DE LAS CAJITAS DE GALERIAS*/
+    /*-----------*/
+    
+    /*REPORTAJES*/
+    #reportajes .pink, #reportajes .yellow{ padding-top: 3.5em; padding-bottom: 3em;} /*SE MODFICA EL PADDIN PARA ESCALARLO*/
+    #reportajes .ctn-img img{height: 420px;} /*SE MODIFICA EL TAMAÑO DE LA IMAGEN PARA QUE SE VEA CORRECTAMENTE*/
+    /*---------*/
+}
+
+@media screen and (max-width: 992px) {
+    /* IPAD VERTICAL */
+    /*BIENVENIDOS*/
+    #bienvenidos .no-padding .wrapper-flex{height: 270px}/*MODIFICACION DE ALTURA DE LAS CAJITAS DE GALERIAS*/
+    /*-----------*/
+    
+    /*REPORTAJES*/
+    #reportajes .pink, #reportajes .yellow{ padding-top: 2.3em; padding-bottom: 2.3em;} /*SE MODFICA EL PADDIN PARA ESCALARLO*/
+    
+    #reportajes .ctn-img img{height: 411.5px;} /*SE MODIFICA EL TAMAÑO DE LA IMAGEN PARA QUE SE VEA CORRECTAMENTE*/
+    /*---------*/
+    
+    .navbar-header{width: 24%;}/*MODIQUE EL TAMAÑO DEL ELEMENTO PARA QUE CUPIERA TODO EL MENU EN UNA LINEA*/
+    .navbar .navbar-brand img{margin-top: .2em;}/*MARGEN DEL LOGO CONTRA EL TOP*/
+    .navbar-nav > li > a{min-height: 70px; padding: 2.2em 1em 2em 1em; font-size: 11.5px;} /*PARA MODIFICAR TAMAÑO DEL MENU DE NAVEGACION Y FUENTE*/
+}
+
+@media screen and (max-width: 767px) {
+    /* MOVIL */
+     #reportajes .ctn-img img{height: auto;} /*SE MODIFICA EL TAMAÑO DE LA IMAGEN PARA QUE SE VEA CORRECTAMENTE*/
+    
+    #bienvenidos .wrapper-flex .fa-caret-down{
+    display: block;
+    left: 50%;
+    bottom: -12px;
+    z-index: 1;
+    }
+    
+    /*INVERTIR ORDEN DE LOS ELEMNTOS "ULTIMO REPORTAJE", "GALERIA MATERNIDAD" Y "GALERIA NIÑOS"*/
+    .order {
+        display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;      /* TWEENER - IE 10 */
+        display: -webkit-flex;     /* NEW - Chrome */
+        display: flex; 
+       
+        flex-direction:column;
+        -webkit-flex-direction:column;
+    }
+   .order .ord1 {
+        order:2;
+       -webkit-order:2;
+       -moz-order:2;
+
+    }
+    .order .ord2 {
+        order:1;
+        -webkit-order:1;
+        -moz-order:1;
+    }
+    /*--------------------------------------------------------------------------------------*/
+    .navbar .navbar-brand{margin-top: 0; width: 169px;}/*MARGEN CONTRA EL TOP*/
+    .navbar-nav > li > a{min-height: 0px; height: 50px; padding-top:1em; font-size: 14px;}/*SE AJUSTA EL TAMAÑO DE LISTA DEL MENU DESPLEGABLE*/
+    
+    .navbar-header{width: 100%;}/*DEVUELVO AL TAMAÑO ORIGINAL EL MENU DE NAVEGACION*/
+    .navbar-header .navbar-brand img{margin-top: .5em; width: 90%;}/*SE ESTABLECE EL TAMAÑO DE LA IMAGEN EN PIXELES PARA QUE SE AJUSTE A DISPOSITIVOS MAS PEQUEÑOS*/
+     
+    /*ESTILOS DEL BOTON DESPLEGABLE*/
+    
+    #nav button{border-radius: 0; border-color:#86E2D5; margin-right: 0;}
+    #nav button:hover, #nav button:active , #nav button:focus{background-color:transparent;}
+    #nav button > span{background-color: #86E2D5;}
+    
+    #nav button > span, #nav button:hover > span, #nav button:active > span, #nav button:focus > span{background-color:#86E2D5;}
+    /*---------------------------*/
+    
+    
+    
+    
+    footer p{ font-size: 15px;}
+    footer p span{font-size: 14px;}
+    
+/*    footer .politicas ul {display: block;}*/
